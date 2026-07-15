@@ -1,4 +1,4 @@
-# Documentação do Projeto: Tela de Login e Cadastro
+# Documentação do Projeto: Projeto Tela Login
 
 Este projeto é uma demonstração de uma interface de autenticação moderna, desenvolvida com foco em UX (Experiência do Usuário), responsividade e boas práticas de estruturação.
 
