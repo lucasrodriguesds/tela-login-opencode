@@ -1,0 +1,9 @@
+# Pastas de dependências
+node_modules/
+
+# Arquivos de sistema/temporários
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
