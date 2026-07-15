@@ -90,10 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isValid) {
         try {
+          console.log("Iniciando autenticação...");
           await auth.createUserWithEmailAndPassword(email, password);
+          console.log("Autenticação bem-sucedida!");
+          
+          // Salvar dados adicionais no Firestore
+          console.log("Tentando salvar no Firestore...");
+          const login = document.getElementById('login').value;
+          await firebase.firestore().collection('users').add({
+            login: login,
+            email: email,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          console.log("Dados salvos no Firestore com sucesso!");
+
           alert("Cadastro realizado com sucesso!");
           window.location.href = "index.html"; // Redirecionar para o login
         } catch (error) {
+          console.error("Erro completo:", error);
           document.getElementById('email-error').innerText = "Erro no cadastro: " + error.message;
           isValid = false;
         }
