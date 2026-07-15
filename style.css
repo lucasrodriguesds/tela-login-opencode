@@ -1,11 +1,20 @@
 :root {
-  --primary-color: #4f46e5; /* Indigo */
-  --bg-color: #f3f4f6; /* Soft gray */
-  --text-color: #1f2937; /* Dark gray */
+  --primary-color: #4f46e5;
+  --bg-color: #f3f4f6;
+  --text-color: #1f2937;
   --input-bg: #ffffff;
   --border-color: #e5e7eb;
   --border-radius: 12px;
   --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --container-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --input-bg: #374151;
+  --border-color: #4b5563;
+  --container-bg: #1f2937;
 }
 
 body {
@@ -17,6 +26,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 @keyframes fadeIn {
@@ -31,13 +41,13 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: var(--container-bg);
   padding: 40px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   width: 100%;
   max-width: 400px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s;
   animation: fadeIn 0.5s ease-out;
 }
 
